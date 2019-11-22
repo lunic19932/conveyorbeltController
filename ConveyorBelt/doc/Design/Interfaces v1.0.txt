@@ -1,0 +1,76 @@
+Enum Direction {RIGHT, LEFT};
+Enum Speed {FAST, SLOW};
+Enum Colour {GREEN, YELLOW, RED};
+
+Interface Port {
+	setBit1(Bit);
+	setBit0(Bit);
+	getBit(Bit);
+}
+
+//Port A,B,C implementieren Port
+
+PortA {
+	setBit1(Bit) {}
+	setBit0(Bit) {}
+	getBit(Bit) {} 		// Error
+}
+
+Motor {
+	PortA portA;
+	start() {}
+	stop() {}
+	setDirection(Direction) {}  // Pins direkt setzen!
+	setSpeed(Speed) {}			// Pins direkt setzen!
+}
+
+ActivityLamp {
+	PortA portA;
+	setColorOn(Colour) {}
+	setColourOff(Colour) {}
+	setColourBlink(Colour) {}
+}
+
+Switch {
+	PortA portA;
+	switchOpen() {}
+	switchClose() {}
+}
+
+PortB {
+	setBit1(Bit) {}		// Error
+	setBit0(Bit) {}		// Error
+	getBit(Bit) {}
+}
+
+Sensor {
+	PortB portB;
+	Pin pin; //?
+	isTrue() {}
+}
+
+PortC
+{
+	setBit1(Bit) {}
+	setBit0(Bit) {}
+	getBit(Bit) {}
+}
+
+LED {
+	PortC portC;
+	Pin pin; //?
+	turnOn() {}
+	turnOff() {}
+}
+
+Button {
+	PortC portC;
+	Pin pin; //?
+	isTrue() {}
+}
+
+// Eventuell als namespace
+IO { 
+	Buttons...
+	LEDs...
+}

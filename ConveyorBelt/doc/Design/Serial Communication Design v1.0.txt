@@ -1,0 +1,45 @@
+Serial Communication Design
+
+Legend:
+CB = Conveyor Belt
+
+Header data:
+type, 			// Type of sent Message (See TypeDefinitions)
+checkSum,		// Checksum
+version,		// Count for rejected messages in a row.
+length,			// Length of sent Message
+source,			// Source of sent Message (Number of the CB)
+msgNumber,		// Number of sent Message
+timeStamp		// Timestamp of sent Message
+
+body:
+Message
+
+definitions:
+
+sizeOf(type) = char;
+type0  = ping;				// Check for working signal
+type1  = pong;				// Answer for ping
+type2  = pukMessage;		// Data for Puk that will be transferred from CB1 to CB2
+type3  = emergencyStop;		// Signal for Emergency Stop
+type4  = rampFull;			// Signal that Ramp is full
+type5  = beltFree;			// Answer to BeltStatusRequest: Belt is free
+type6  = beltInUse;			// Answer to BeltStatusRequest: Belt is in use
+type7  = beltStatusRequest;	// Checking status of CB
+type8  = messageAccepted;	// Answer for every sent message: accepted
+type9  = messageRejected;	// Answer for every sent message: rejected 
+type10 = sendWarning;		// Send Warning signal
+type11 = warningAck; 		// Warning Acknowledged
+
+
+Checksumme CRC 64 bit
+
+sizeOf(version) = char
+
+sizeOf(length) = int;
+
+sizeOf(source) = char;
+
+sizeOf(msgNumber) = int;
+
+sizeOf(timeStamp) = long;

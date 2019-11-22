@@ -1,0 +1,29 @@
+Variablennamen
+
+sensors: 						sn_
+	lightbarriers:
+		lightbarrier start: 		sn_lb_start
+		lightbarrier height sensor: sn_lb_heightsn
+		lightbarrier switch:		sn_lb_switch
+		lightbarrier ramp:			sn_lb_ramp
+		lightbarrier end:			sn_lb_end
+	height sensor:					sn_height
+	height control:					sn_height_control
+	switch (Weiche) open:			sn_switch_open
+	metal sensor:					sn_metal
+	buttons: 					btn_
+		button start:				btn_start
+		button stop:				btn_stop
+		button reset:				btn_reset
+		button E-Stop:				btn_emergency
+
+
+actors: 						ac_
+	motor:							ac_motor
+	switch (Weiche):				ac_switch
+	activity lamp:					ac_lamp
+	LEDs:						led_
+		LED start button:			led_start
+		LED reset button:			led_reset
+		LED Q1:						led_q1
+		LED Q2:						led_q2		
